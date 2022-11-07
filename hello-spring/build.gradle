@@ -18,6 +18,11 @@ dependencies {
 	// (+Springboot는 의존관계가 있는 라이브러리들을 자동으로 다운로드한다.)
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	// 순수 JDBC를 위한 환경설정: JPA에 포함되어 있으므로 굳이 필요하지 않다!
+//	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	// JPA를 위한 환경설정
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	runtimeOnly 'com.h2database:h2'
 	// 기본으로 제공하는 Test 기능 라이브러리
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

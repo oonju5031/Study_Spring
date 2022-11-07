@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+// 단위 테스트: 실제 DB에 접근하진 않지만 MemberServiceIntegrationTest(통합 테스트)에 비해 실행 속도에서 이점을 가진다. 일반적으로는 단위 테스트가 더 좋은 설계이다.
 class MemberServiceTest {
 
     MemberService memberService;
@@ -29,14 +30,14 @@ class MemberServiceTest {
 
     @Test
     void join() {
-        // given
+        // given(주어진 상황)
         Member member = new Member();
         member.setName("hello");
         
-        // when
+        // when(실행하였을 때)
         Long saveId = memberService.join(member);
 
-        // then
+        // then(나와야 하는 결과)
         Member findMember = memberService.findOne(saveId).get();
         assertThat(member.getName()).isEqualTo(findMember.getName());
     }
