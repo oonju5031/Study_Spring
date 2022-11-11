@@ -22,7 +22,7 @@ class RateDiscountPolicyTest {
     }
 
     @Test  // 성공 테스트
-    @DisplayName("VIP에 한해 10% 할인이 적용되어야 한다.")
+    @DisplayName("VIP에 한해 할인이 적용되어야 한다.")
     void vipY() {
         // given
         Member member = new Member(1L, "memberVIP", Grade.VIP);
@@ -32,7 +32,7 @@ class RateDiscountPolicyTest {
         int discount = rateDiscountPolicy.discount(member, 10000);
 
         // then
-        assertThat(discount).isEqualTo(1000);
+        assertThat(discount).isEqualTo(2000);
     }
 
     @Test  // 실패 테스트

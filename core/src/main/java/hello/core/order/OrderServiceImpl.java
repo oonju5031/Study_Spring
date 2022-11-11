@@ -4,7 +4,10 @@ import hello.core.discount.DiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderServiceImpl implements OrderService {
 
     // OrderServiceImpl이 Interface(MemberRepository, DiscountPolicy)뿐만 아니라 구현체(MemoryMemberRepository, FixDiscountPolicy)를 동시에 의존하고 있다.
@@ -15,6 +18,7 @@ public class OrderServiceImpl implements OrderService {
     // DIP 준수: 추상화에만 의존하도록 설계를 변경하고 구현체를 생성/주입하는 책임을 가지는 별개의 설정 클래스(AppConfig.java)를 만든다.
     private final DiscountPolicy discountPolicy;
 
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
@@ -26,5 +30,10 @@ public class OrderServiceImpl implements OrderService {
         int discountPrice = discountPolicy.discount(member, itemPrice);  // OrderService는 할인 로직에 관여하지 않음: 단일 책임의 원칙 준수
 
         return new Order(memberId, itemName, itemPrice, discountPrice);
+    }
+
+    // For test
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
     }
 }
