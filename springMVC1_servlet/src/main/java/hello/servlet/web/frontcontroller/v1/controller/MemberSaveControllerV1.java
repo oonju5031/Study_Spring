@@ -10,6 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * MVC Pattern with FrontController V1:
+ * view(save.jsp)로부터 전달받은 데이터를 model(memberRepository)에 저장한 후
+ * view(save-result.jsp)를 호출하는 controller
+ * 해당 controller의 url 요청은 frontcontroller가 담당한다.
+ */
 public class MemberSaveControllerV1 implements ControllerV1 {
 
     private MemberRepository memberRepository = MemberRepository.getInstance();

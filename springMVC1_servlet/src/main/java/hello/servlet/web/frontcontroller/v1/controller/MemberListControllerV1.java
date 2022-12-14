@@ -11,6 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * MVC Pattern with FrontController V1:
+ * model(memberRepository)에 저장된 모든 member들을
+ * view(members.jsp)를 통해 출력하는 controller
+ * 해당 controller의 url 요청은 frontcontroller가 담당한다.
+ */
 public class MemberListControllerV1 implements ControllerV1 {
 
     private MemberRepository memberRepository = MemberRepository.getInstance();

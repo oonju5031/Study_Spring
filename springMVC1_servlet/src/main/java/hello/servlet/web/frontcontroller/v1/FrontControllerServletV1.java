@@ -13,11 +13,15 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * MVC Pattern with FrontController V1:
+ * controller로의 URL 요청을 받아 Mapping을 담당하는 FrontController
+ */
 // /front-controller/v1/* : v1 하위의 url이 호출되면 이 servlet이 호출됨
 @WebServlet(name = "frontControllerServletV1", urlPatterns = "/front-controller/v1/*")
 public class FrontControllerServletV1 extends HttpServlet {
 
-    // 매핑 정보를 저장하는 HashMap: {URL, ControllerV1을 구현한 클래스}
+    // 매핑 정보를 저장하는 HashMap: {key URL : value ControllerV1을 구현한 클래스}
     private Map<String, ControllerV1> controllerMap = new HashMap<>(); // key: url, value: ControllerV1
 
     // 생성자에 매핑 정보 입력: 해당 servlet이 생성될 때 HashMap에 값을 저장함
