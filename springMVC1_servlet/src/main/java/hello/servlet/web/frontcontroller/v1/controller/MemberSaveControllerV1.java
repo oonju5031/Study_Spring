@@ -1,28 +1,23 @@
-package hello.servlet.web.sevletmvc;
+package hello.servlet.web.frontcontroller.v1.controller;
 
 import hello.servlet.domain.member.Member;
 import hello.servlet.domain.member.MemberRepository;
+import hello.servlet.web.frontcontroller.v1.ControllerV1;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * MVC Pattern:
- * view(save.jsp)로부터 전달받은 데이터를 model(memberRepository)에 저장한 후
- * view(save-result.jsp)를 호출하는 controller
- */
-@WebServlet(name = "mvcMemberSaveServlet", urlPatterns = "/servlet-mvc/members/save")
-public class MvcMemberSaveServlet extends HttpServlet {
+public class MemberSaveControllerV1 implements ControllerV1 {
 
     private MemberRepository memberRepository = MemberRepository.getInstance();
 
     @Override
-    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        // 로직은 Servlet MVC와 동일
 
         String username = request.getParameter("username");
         int age = Integer.parseInt(request.getParameter("age"));
