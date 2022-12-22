@@ -24,7 +24,7 @@ import java.util.Map;
 public class FrontControllerServletV2 extends HttpServlet {
 
     // 요청 매핑 정보를 저장하는 HashMap: {key URL : value ControllerV2를 구현한 클래스}
-    private Map<String, ControllerV2> controllerMap = new HashMap<>(); // key: url, value: ControllerV1
+    private Map<String, ControllerV2> controllerMap = new HashMap<>(); // key: url, value: ControllerV2
 
     // 생성자에 요청 매핑 정보 입력: 해당 servlet이 생성될 때 HashMap에 값을 저장함
     public FrontControllerServletV2() {
