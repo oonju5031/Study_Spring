@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Locale;
 
 /**
- * HTTP 요청 조회: 기본 및 헤더 정보 조회
+ * HTTP 요청: 기본 및 헤더 정보 조회
  */
 @Slf4j
 @RestController

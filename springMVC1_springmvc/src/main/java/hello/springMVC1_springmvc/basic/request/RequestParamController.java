@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
- * HTTP 요청 파라미터 조회: Query Parameter, HTML Form
+ * HTTP 요청 메시지: 파라미터(Query Parameter, HTML Form)
  * 클라이언트에서 서버로 요청 데이터를 전달할 때 쓰는 방식 3가지(Query parameter, HTML form, HTTP message body에 데이터 입력하여 전송) 중 앞의 두 가지를 처리하는 Controller이다.
  * (GET query parameter, POST HTML Form 둘 다 형식이 같으므로 동일한 로직으로 조회할 수 있다.)
  */

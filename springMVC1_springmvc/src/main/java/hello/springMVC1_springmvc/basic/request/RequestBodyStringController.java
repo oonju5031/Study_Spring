@@ -20,7 +20,7 @@ import java.io.Writer;
 import java.nio.charset.StandardCharsets;
 
 /**
- * HTTP 요청 메시지 조회: HTTP message body에 담긴 데이터
+ * HTTP 요청 메시지: HTTP message body에 담긴 데이터
  * 클라이언트에서 서버로 요청 데이터를 전달할 때 쓰는 방식 3가지(Query parameter, HTML form, HTTP message body에 데이터 입력하여 전송) 중 세 번째를 처리하는 Controller아며,
  * 개중 HTTP message body가 일반 텍스트 형식인 경우이다.
  */
