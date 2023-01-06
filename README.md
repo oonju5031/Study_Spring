@@ -4,11 +4,9 @@ YoungHan Kim's online lecture
 ----
 ## 스프링 입문 - 코드로 배우는 스프링 부트, 웹 MVC, DB 접근 기술
 * **hello-spring**
-* **2022.11.08 완료**
-* **개발 환경**
   * Java 11.0.16.1
-  * JDK 1.8.0_221
   * Framework: Spring Boot 2.6.13
+  * Build tool: Gradle 7.5.1
   * Database: h2 1.4.200
   * ORM: JPA
 * **h2 경로 설정**
@@ -17,9 +15,19 @@ YoungHan Kim's online lecture
 ----
 ## 스프링 핵심 원리 - 기본편
 * **core**
-* **2022.11.15 완료**
-* **개발 환경**
   * Java 11.0.16.1
-  * JDK 1.8.0_221
   * Framework: Spring Boot 2.6.13
 ----
+## 스프링 MVC 1편 - 백엔드 웹 개발 핵심 기술
+* **springMVC1_servlet**
+  * Java 11.0.16
+  * Framework: Spring Boot 2.7.4
+  * Build tool: Gradle 7.5.1
+* **springMVC1_springmvc**
+  * Java 11.0.16
+  * Framework: Spring Boot 2.7.7
+  * Build tool: Gradle 7.6
+* **springMVC1_item-service**
+  * Java 11.0.16
+  * Framework: Spring Boot 2.6.13
+  * Build tool: Gradle 7.6
