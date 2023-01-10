@@ -19,6 +19,10 @@
                     onclick="location.href='addForm.html'"
                     th:onclick="|location.href='@{/basic/items/add}'|"
                     type="button">상품 등록</button>
+<!-- 다음 두 구문은 동일하다.
+th:onclick="|location.href = '@{/basic/items/add}'|"  기본 문법
+th:onclick="'location.href = ' + '@{basic/items/add}'"  리터럴 대체 문법
+-->
         </div>
     </div>
 
@@ -37,10 +41,11 @@
             </thead>
             <tbody>
             <tr th:each="item:${items}">
-                <td><a href="item.html" th:href="@{/basic/items/{itemId}(itemId=${item.id})}" th:text="${item.id}">회원 ID</a></td>
-                <td><a href="item.html" th:href="@{/basic/items/{itemId}(itemId=${item.id})}" th:text="${item.itemName}">상품명</a></td>
-                <td th:text="${item.price}">10000</td>
-                <td th:text="${item.quantity}">10</td>
+                <td><a href="item.html" th:href="@{/basic/items/{itemId} (itemId = ${item.id})}" th:text="${item.id}">회원 ID</a></td>
+                <!-- 리터럴 대체 문법: th:href="@{|/basic/items/${item.id}|}" -->
+                <td><a href="item.html" th:href="@{/basic/items/{itemId} (itemId = ${item.id})}" th:text="${item.itemName}">상품명</a></td>
+                <td th:text="${item.price}">가격</td>
+                <td th:text="${item.quantity}">수량</td>
             </tr>
             </tbody>
         </table>
