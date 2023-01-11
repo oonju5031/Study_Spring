@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이스케이프하지 않고 텍스트 출력</title>
+</head>
+<body>
+<!--/*
+Thymeleaf의 th:text, [[]]는 기본적으로 escape를 제공한다.
+    * Escape: HTML에서 사용하는 특수 문자(예: <, >)를 HTML 엔티티(예: &lt;, &gt;)로 변경하는 것
+Escape하지 않고 텍스트를 렌더링하려면 th:utext, [()]를 사용한다.
+*/-->
+
+<h1>Escaped & Unescaped</h1>
+
+<h3>text vs. utext</h3>
+<ul>
+  <li>th:text = <span th:text="${data}"></span></li>
+  <li>th:utext = <span th:utext="${data}"></span></li>
+</ul>
+
+<h3 th:inline="none">[[]] vs. [()]</h3>
+<ul>
+  <li><span th:inline="none">[[${data}]] = </span>[[${data}]]</li>
+  <li><span th:inline="none">[(${data})] = </span>[(${data})]</li>
+</ul>
+
+</body>
+</html>

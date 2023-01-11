@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>주석</title>
+</head>
+<body>
+<!--
+HTML이 지원하는 Standard html/xml comment block이다.
+클라이언트가 이 주석을 볼 수 있다.
+해당 주석 내부에도 thymeleaf가 적용된다.
+-->
+
+<!--/*
+Thymeleaf가 지원하는 thymeleaf parser-level 주석이다.
+클라이언트가 이 주석을 볼 수 없다(jsp의 <%-- 주석과 유사하다).
+정적으로 생성될 때엔 클라이언트가 볼 수 있는 주석이 된다.
+동적으로 생성될 때엔 클라이언트가 볼 수 없는 주석이 된다.
+해당 주석 내부에는 thymeleaf가 적용되지 않는다.
+*/-->
+
+<!--/*/
+Thymeleaf가 지원하는 thymeleaf prototype-only 주석이다.<br>
+정적으로 생성될 때엔 주석이 된다. 이 주석은 클라이언트가 볼 수 있다.<br>
+동적으로 생성될 때엔(=thymeleaf가 적용될 때엔) HTML 요소가 된다.<br>
+<div style="color:red">동적 생성 테스트:
+    <a href="/">메인으로 이동</a>
+</div>
+/*/-->
+
+</body>
+</html>

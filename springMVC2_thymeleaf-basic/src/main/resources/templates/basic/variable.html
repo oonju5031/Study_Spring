@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>변수의 표현 및 지역 변수 선언</title>
+</head>
+<body>
+
+<h1>SpringEL 표현식</h1>
+
+<!--
+Spring에는 내부에서 객체에 접근하기 위해 사용하는 Spring Expression Language(SpEL) 표현식이 있는데,
+Thymeleaf는 이를 그대로 사용하기 때문에 동일한 표현식으로 접근할 수 있다.
+-->
+
+<ul>Object  <!-- Java beans의 프로퍼티 접근법(getter, setter)를 SpringEL 표현식을 통해 더 간략하게 사용할 수 있다. -->
+    <li>${user.username} = <span th:text="${user.username}"></span></li>  <!-- SpringEL 표현식 -->
+    <li>${user['username']} = <span th:text="${user['username']}"></span></li>  <!-- SpringEL 표현식 -->
+    <li>${user.getUsername()} = <span th:text="${user.getUsername()}"></span></li>  <!-- Java의 property 접근법 -->
+</ul>
+<ul>List  <!-- 리스트 번호 0을 통해 구한 users[0]이 object이므로 이후는 object와 동일하다. -->
+    <li>${users[0].username} = <span th:text="${users[0].username}"></span></li>  <!-- SpringEL 표현식 -->
+    <li>${users[0]['username']} = <span th:text="${users[0]['username']}"></span></li>  <!-- SpringEL 표현식 -->
+    <li>${users[0].getUsername()} = <span th:text="${users[0].getUsername()}"></span></li>  <!-- Java의 property 접근법 -->
+</ul>
+<ul>Map  <!-- userMap에서 key값으로 value(객체 User)를 찾는 동작, 해당 동작으로 찾은 User에서 username에 접근하는 동작 총 2회의 동작이 필요하다. -->
+    <li>${userMap['userA'].username} = <span th:text="${userMap['userA'].username}"></span></li>  <!-- User 접근과 username 접근 둘 다 SpringEL 표현식 -->
+    <li>${userMap['userA']['username']} = <span th:text="${userMap['userA']['username']}"></span></li>  <!-- User 접근과 username 접근 둘 다 SpringEL 표현식 -->
+    <li>${userMap['userA'].getUsername()} = <span th:text="${userMap['userA'].getUsername()}"></span></li>  <!-- User 접근은 SpringEL 표현식, username 접근은 property 접근법 -->
+    <li>${userMap.get('userA').getUsername()} = <span th:text="${userMap.get('userA').getUsername()}"></span></li>  <!-- User 접근과 username 접근 둘 다 Java 문법(map의 get method, property 접근법) -->
+</ul>
+
+<h1>Thymeleaf로 지역 변수 선언: (th:with)</h1>
+<!-- th:with를 통해 지역 변수를 선언할 수 있다. 이 때 변수의 scope는 선언한 태그 및 그 내부이다. -->
+<div th:with="first=${users[0]}">
+    <p>처음 사람의 이름은 <span th:text="${first.username}"></span>입니다.</p>
+</div>
+
+</body>
+</html>

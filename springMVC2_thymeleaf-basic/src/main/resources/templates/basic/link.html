@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>URL 링크</title>
+</head>
+<body>
+
+<h1>URL 링크</h1>
+
+<ul>
+  <li><a th:href="@{/hello}">basic url</a></li>
+  <li><a th:href="@{/hello (param1=${param1}, param2=${param2})}">query parameter</a></li>  <!-- 괄호 내의 값은 query parameter로 전달된다. -->
+  <li><a th:href="@{/hello/{param1}/{param2} (param1=${param1}, param2=${param2})}">path variable</a></li>  <!-- URL에 대응되는 path variable이 있으면 query parameter로 전달된다. -->
+  <li><a th:href="@{/hello/{param1} (param1=${param1}, param2=${param2})}">path variable + query parameter</a></li>  <!-- 혼용 역시 가능하다. -->
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>객체</title>
+</head>
+<body>
+
+<h1>식 기본 객체(Expression Basic Objects)</h1>
+<!-- 주의: Spring Boot 3.0부터는 ${#request}, ${#response}, ${#session}, ${#servletContext}를 지원하지 않는다. 이 경우 model에 해당 객체를 추가해서 사용하여야 한다. -->
+<ul>
+    <li>request = <span th:text="${#request}"></span></li>
+    <li>response = <span th:text="${#response}"></span></li>
+    <li>session = <span th:text="${#session}"></span></li>
+    <li>servletContext = <span th:text="${#servletContext}"></span></li>
+    <li>locale = <span th:text="${#locale}"></span></li>
+</ul>
+
+<h1>편의 객체</h1>
+<ul>
+    <!-- Controller에서 Model에 담아 전달하는 과정을 거치지 않고 바로 사용할 수 있다! -->
+    <li>Request parameter = <span th:text="${param.paramData}"></span></li>
+    <li>session = <span th:text="${session.sessionData}"></span></li>
+    <li>spring bean = <span th:text="${@helloBean.hello('Spring!')}"></span></li>  <!-- @ + (빈 이름) 으로 spring bean에도 바로 접근 가능 -->
+</ul>
+
+</body>
+</html>
