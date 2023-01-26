@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>리터럴</title>
+</head>
+<body>
+
+<h1>리터럴</h1>
+
+<ul>
+	<!-- 리터럴은 ''로 감싸는 것을 원칙으로 하나, 예외적으로 공백이 없는 문자열(A-Z, a-z, 0-9, [], ., -, _)은 하나의 의미 있는 토큰으로 인지해서 ''를 생략할 수 있다. -->
+	<!-- <li>"hello world!" = <span th:text="hello world!"></span></li>--> <!-- 중간에 공백이 있어 리터럴 토큰으로 인지하지 못함 -->
+	<li>'hello' + 'world!' = <span th:text="'hello' + ' world!'"></span></li>
+	<li>'hello world!' = <span th:text="'hello world!'"></span></li>
+	<li>'hello ' + ${data} = <span th:text="'hello ' + ${data}"></span></li>  <!-- 변수 사용 -->
+	<li>|hello ${data}|<span th:text="|hello ${data}|"></span></li>  <!-- 리터럴 대체 문법: || 내를 리터럴로 인지하되, 내부의 변수를 치환한다. -->
+</ul>
+
+</body>
+</html>
+<!--
+리터럴은 소스 코드상에 고정된 값을 말하는 용어이다. thymeleaf에는 다음과 같은 리터럴이 있다.
+String a = "Hello";  // 문자 리터럴
+int b = 12;  // 숫자 리터럴
+boolean c = true;  // 불린 리터럴
+Integer d = null;  // null값을 가지는 리터럴
+-->

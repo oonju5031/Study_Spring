@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>조건부 평가</title>
+</head>
+<body>
+
+<h1>If, Unless</h1>
+
+<table>
+  <tr>
+    <th>count</th>
+    <th>username</th>
+    <th>age</th>
+  </tr>
+  <tr th:each="user, userStat : ${users}">
+    <td th:text="${userStat.count}">1</td>
+    <td th:text="${user.username}">username</td>
+
+  </tr>
+</table>
+
+</body>
+</html>

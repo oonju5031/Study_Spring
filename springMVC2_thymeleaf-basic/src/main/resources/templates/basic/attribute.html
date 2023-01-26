@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>속성</title>
+</head>
+<body>
+
+<!-- thymeleaf에서의 속성은 th:(속성명) 으로 정의되며, 이는 서버 렌더링 시 기존 속성을 대체한다. 기존 속성이 없는 경우 새로 만든다. -->
+
+<h1>속성 설정</h1>
+<input type="text" name="mock" th:name="userA">
+
+<h1>속성 추가</h1>
+- th:attrappend = <input type="text" class="text" th:attrappend="class=' large'"><br>  <!-- class의 맨 뒤에 large를 추가(공백에 주의) -->
+- th:attrprepend = <input type="text" class="text" th:attrPrepend="class='large '"><br>  <!-- class의 맨 앞에 large를 추가(공백에 주의) -->
+- th:classappend = <input type="text" class="text" th:classappend="large"><br>  <!-- class에 large를 추가(공백 필요 없음) -->
+
+<h1>checked 처리</h1>
+- checked=false <input type="checkbox" name="active" checked="false"><br>  <!-- HTML 기본: true/false 여부와 상관 없이 checked속성이 있으면 체크된다. -->
+- checked o <input type="checkbox" name="active" th:checked="true"><br>
+- checked x <input type="checkbox" name="active" th:checked="false"><br>  <!-- thymeleaf: checked가 false인 경우 자동으로 checked 속성 자체를 제거한다. 즉 true/false를 사용할 수 있게 된다. -->
+
+</body>
+</html>
