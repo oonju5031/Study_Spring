@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>주석</title>
+</head>
+<body>
+
+<h1>예시</h1>
+
+<h2>0. 주석이 없는 경우</h2>
+<span th:text="${data}">html data</span>
+
+<h2>1. 표준 HTML 주석</h2>
+<!--
+<span th:text="${data}">html data</span>
+-->
+
+<h2>2. Thymeleaf Parser 주석</h2>
+<!--/*
+<span th:text="${data}">html data</span>
+*/-->
+
+<!--/*-->
+<span th:text="${data}">html data</span>
+<!--*/-->
+
+<h2>3. Thymeleaf Prototype 주석</h2>
+<!--/*/
+<span th:text="${data}">html data</span>
+/*/-->
+
+</body>
+</html>
