@@ -31,3 +31,13 @@ YoungHan Kim's online lecture
   * Java 11.0.16
   * Framework: Spring Boot 2.6.13
   * Build tool: Gradle 7.6
+
+## 스프링 MVC 2편 - 백엔드 웹 개발 활용 기술
+* **springMVC2_thymeleaf-basic
+  * Java 11.0.16
+  * Framework: Spring Boot 2.7.7
+  * Build tool: Gradle 7.6
+* **springMVC2_form
+  * Java 11.0.16
+  * Framework: Spring Boot 2.4.4
+  * Build tool: Gradle 6.8.2

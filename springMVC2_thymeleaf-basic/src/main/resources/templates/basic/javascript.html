@@ -10,27 +10,36 @@
 <script>
 	var username = [[${user.username}]];
 	var age = [[${user.age}]];
+	// escape
+	var escape = [[${escape.username}]];
 
 	// 자바스크립트 내추럴 템플릿
 	var username2 = /* [[${user.username}]] */ "test username";
 
 	// 객체
 	var user = [[${user}]];
-
-	// escape
-
 </script>
 
 <!-- 자바스크립트 인라인 사용 후 -->
 <script th:inline="javascript">
 	var username = [[${user.username}]];
 	var age = [[${user.age}]];
+	// escape
+	var escape = [[${escape.username}]];
 
 	// 자바스크립트 내추럴 템플릿
 	var username2 = /* [[${user.username}]] */ "test username";
 
 	// 객체
 	var user = [[${user}]];
+
+	// 자바스크립트 인라인에서의 each
+	[
+	#
+	th:each = "user, stat : ${users}"
+	]
+	var user = [[${stat.count}]] = [[${user}]];
+	[/]
 </script>
 
 </body>
