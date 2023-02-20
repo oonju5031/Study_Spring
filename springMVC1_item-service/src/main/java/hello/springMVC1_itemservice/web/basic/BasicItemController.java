@@ -111,7 +111,7 @@ public class BasicItemController {
      * 상품 추가 logic: @ModelAttribute 사용(3)
      */
     // @PostMapping("/add")
-    public String addItemV4(Item item) {
+        public String addItemV4(Item item) {
         // Annotation @ModelAttribute도 생략할 수 있다!
         // * @RequestParam 생략과의 구분: 단순 타입(String, int...)이 생략되면 @RequestParam이 생략된 것으로 인지하며, 임의의 객체인 경우 @ModelAttribute가 생략된 것으로 취급한다.
 
