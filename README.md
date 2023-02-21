@@ -41,3 +41,7 @@ YoungHan Kim's online lecture
   * Java 11.0.16
   * Framework: Spring Boot 2.4.4
   * Build tool: Gradle 6.8.2
+* **springMVC2_message
+  * Java 11.0.16
+  * Framework: Spring Boot 2.4.4
+  * Build tool: Gradle 6.8.2
