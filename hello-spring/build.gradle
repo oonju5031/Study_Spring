@@ -18,6 +18,8 @@ dependencies {
 	// (+Springboot는 의존관계가 있는 라이브러리들을 자동으로 다운로드한다.)
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	// 기본으로 제공하는 Test 기능 라이브러리
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
