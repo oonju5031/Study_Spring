@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>회원 목록</title>
+</head>
+<body>
+
+<div th:each="member : ${memberList}">
+    <span th:text="${member.id}"></span>
+    <span th:text="${member.name}"></span>
+</div>
+
+</body>
+</html>
